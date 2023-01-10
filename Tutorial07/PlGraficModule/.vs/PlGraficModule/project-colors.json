@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "aa3dad8b-7ee5-4d0c-9c6d-f94f9c9a867c": {
+      "ProjectGuid": "aa3dad8b-7ee5-4d0c-9c6d-f94f9c9a867c",
+      "DisplayName": "PlGraficModule",
+      "ColorIndex": 0
+    },
+    "d29c6982-a589-4081-89b1-91e78d7c41e2": {
+      "ProjectGuid": "d29c6982-a589-4081-89b1-91e78d7c41e2",
+      "DisplayName": "Tutorial07",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
