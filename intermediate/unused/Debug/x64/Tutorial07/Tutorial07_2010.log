@@ -117,4 +117,13 @@ D:\DXSDK\Include\xnamathvector.inl(1269,78): warning C4838: conversion from 'uns
 D:\DXSDK\Include\xnamathmisc.inl(518,43): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 D:\DXSDK\Include\xnamathmisc.inl(519,40): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 D:\DXSDK\Include\xnamathmisc.inl(519,51): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(586,42): warning C4456: declaration of 'cbNeverChanges' hides previous local declaration
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(547,20): message : see declaration of 'cbNeverChanges'
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(589,47): warning C4456: declaration of 'cbChangesOnResize' hides previous local declaration
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(544,22): message : see declaration of 'cbChangesOnResize'
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(602,42): warning C4456: declaration of 'cbNeverChanges' hides previous local declaration
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(547,20): message : see declaration of 'cbNeverChanges'
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(605,47): warning C4456: declaration of 'cbChangesOnResize' hides previous local declaration
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(544,22): message : see declaration of 'cbChangesOnResize'
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(546,17): warning C4189: 'moveOffset': local variable is initialized but not referenced
   Tutorial07_2010.vcxproj -> C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\bin\Debug\x64\Tutorial07.exe

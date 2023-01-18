@@ -387,6 +387,7 @@
     <ClCompile Include="editor\Tutorial07.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>

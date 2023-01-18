@@ -10,9 +10,10 @@
 #include <d3dx11.h>
 #include <d3dcompiler.h>
 #include <xnamath.h>
+#include "camera.h"
 #include "resource.h"
 
-
+float value = 0.1f;
 //--------------------------------------------------------------------------------------
 // Structures
 //--------------------------------------------------------------------------------------
@@ -485,7 +486,6 @@ HRESULT InitDevice()
     XMVECTOR Up = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
     g_View = XMMatrixLookAtLH( Eye, At, Up );
 
-
     CBNeverChanges cbNeverChanges;
     cbNeverChanges.mView = XMMatrixTranspose( g_View );
     g_pImmediateContext->UpdateSubresource( g_pCBNeverChanges, 0, NULL, &cbNeverChanges, 0, 0 );
@@ -542,6 +542,15 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
     UINT width = rc.right - rc.left;
     UINT height = rc.bottom - rc.top;
     CBChangeOnResize cbChangesOnResize;
+
+    const float moveOffset = 0.5f;
+    CBNeverChanges cbNeverChanges;
+
+    // following camera
+    static XMVECTOR eye = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+    static XMVECTOR at = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+    static XMVECTOR up = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+
     switch( message )
     {
         case WM_PAINT:
@@ -565,9 +574,41 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 
             }
             break;
+        case WM_KEYDOWN:
+        {
+            g_World = XMMatrixIdentity();
+            // Initialize the view matrix
+            eye += XMVectorSet(0.0f, -1.0f, 0.0f, 0.0f);
+            at += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+            up += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+            g_View = XMMatrixLookAtLH(eye, at, up);
+
+            CBNeverChanges cbNeverChanges;
+            cbNeverChanges.mView = XMMatrixTranspose(g_View);
+            g_pImmediateContext->UpdateSubresource(g_pCBNeverChanges, 0, NULL, &cbNeverChanges, 0, 0);
+            CBChangeOnResize cbChangesOnResize;
+            break;
+        }
+            
+        case WM_KEYUP:
+        {
+            g_World = XMMatrixIdentity();
+            // Initialize the view matrix
+            eye += XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+            at += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+            up += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+            g_View = XMMatrixLookAtLH(eye, at, up);
+
+            CBNeverChanges cbNeverChanges;
+            cbNeverChanges.mView = XMMatrixTranspose(g_View);
+            g_pImmediateContext->UpdateSubresource(g_pCBNeverChanges, 0, NULL, &cbNeverChanges, 0, 0);
+            CBChangeOnResize cbChangesOnResize;
+            break;
+        }
 
         default:
             return DefWindowProc( hWnd, message, wParam, lParam );
+        
     }
 
     return 0;
