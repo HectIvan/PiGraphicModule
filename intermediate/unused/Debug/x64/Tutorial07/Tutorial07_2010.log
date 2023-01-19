@@ -1,4 +1,135 @@
-﻿  Tutorial07.cpp
+﻿  camera.cpp
+D:\DXSDK\Include\xnamath.h(159,35): error C2433: 'FLOAT': '__forceinline' not permitted on data declarations
+D:\DXSDK\Include\xnamath.h(159,35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(159,17): error C2146: syntax error: missing ';' before identifier 'XMConvertToRadians'
+D:\DXSDK\Include\xnamath.h(159,42): error C2146: syntax error: missing ')' before identifier 'fDegrees'
+D:\DXSDK\Include\xnamath.h(159,52): error C2143: syntax error: missing ';' before '{'
+D:\DXSDK\Include\xnamath.h(159,52): error C2447: '{': missing function header (old-style formal list?)
+D:\DXSDK\Include\xnamath.h(160,35): error C2433: 'FLOAT': '__forceinline' not permitted on data declarations
+D:\DXSDK\Include\xnamath.h(160,35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(160,11): error C2086: 'int FLOAT': redefinition
+D:\DXSDK\Include\xnamath.h(159): message : see declaration of 'FLOAT'
+D:\DXSDK\Include\xnamath.h(160,17): error C2146: syntax error: missing ';' before identifier 'XMConvertToDegrees'
+D:\DXSDK\Include\xnamath.h(160,42): error C2146: syntax error: missing ')' before identifier 'fRadians'
+D:\DXSDK\Include\xnamath.h(160,52): error C2143: syntax error: missing ';' before '{'
+D:\DXSDK\Include\xnamath.h(160,52): error C2447: '{': missing function header (old-style formal list?)
+D:\DXSDK\Include\xnamath.h(217,46): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(217,36): error C2146: syntax error: missing ';' before identifier '__vector4i'
+D:\DXSDK\Include\xnamath.h(217,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(246,13): error C3646: 'i': unknown override specifier
+D:\DXSDK\Include\xnamath.h(246,14): error C2143: syntax error: missing ',' before '['
+D:\DXSDK\Include\xnamath.h(246,17): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(260,14): error C3646: 'u': unknown override specifier
+D:\DXSDK\Include\xnamath.h(260,15): error C2143: syntax error: missing ',' before '['
+D:\DXSDK\Include\xnamath.h(260,19): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(316,38): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(316,46): error C2805: binary 'operator *=' has too few parameters
+D:\DXSDK\Include\xnamath.h(317,38): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(317,46): error C2805: binary 'operator /=' has too few parameters
+D:\DXSDK\Include\xnamath.h(323,37): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(324,30): error C2146: syntax error: missing ')' before identifier 'S'
+D:\DXSDK\Include\xnamath.h(325,37): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(325,45): error C2805: binary 'operator /' has too few parameters
+D:\DXSDK\Include\xnamath.h(342,19): error C3646: '_11': unknown override specifier
+D:\DXSDK\Include\xnamath.h(342,22): error C2059: syntax error: ','
+D:\DXSDK\Include\xnamath.h(342,37): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(343,19): error C3646: '_21': unknown override specifier
+D:\DXSDK\Include\xnamath.h(343,22): error C2059: syntax error: ','
+D:\DXSDK\Include\xnamath.h(343,37): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(344,19): error C3646: '_31': unknown override specifier
+D:\DXSDK\Include\xnamath.h(344,22): error C2059: syntax error: ','
+D:\DXSDK\Include\xnamath.h(344,37): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(345,19): error C3646: '_41': unknown override specifier
+D:\DXSDK\Include\xnamath.h(345,22): error C2059: syntax error: ','
+D:\DXSDK\Include\xnamath.h(345,37): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(346,10): warning C4408: anonymous struct did not declare any data members
+D:\DXSDK\Include\xnamath.h(347,15): error C3646: 'm': unknown override specifier
+D:\DXSDK\Include\xnamath.h(347,16): error C2143: syntax error: missing ',' before '['
+D:\DXSDK\Include\xnamath.h(347,22): error C2238: unexpected token(s) preceding ';'
+D:\DXSDK\Include\xnamath.h(354,15): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(354,14): error C2535: '_XMMATRIX::_XMMATRIX(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(352): message : see declaration of '_XMMATRIX::_XMMATRIX'
+D:\DXSDK\Include\xnamath.h(358,15): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(358,14): error C2535: '_XMMATRIX::_XMMATRIX(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(352): message : see declaration of '_XMMATRIX::_XMMATRIX'
+D:\DXSDK\Include\xnamath.h(360,17): error C2143: syntax error: missing ';' before '('
+D:\DXSDK\Include\xnamath.h(360,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(360,52): error C3646: 'CONST': unknown override specifier
+D:\DXSDK\Include\xnamath.h(360,58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(361,10): error C2143: syntax error: missing ';' before '&'
+D:\DXSDK\Include\xnamath.h(361,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(361,52): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+D:\DXSDK\Include\xnamath.h(363,28): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(363,47): error C2805: binary 'operator =' has too few parameters
+D:\DXSDK\Include\xnamath.h(366,29): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(366,48): error C2805: binary 'operator *=' has too few parameters
+D:\DXSDK\Include\xnamath.h(367,28): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(367,48): error C3646: 'CONST': unknown override specifier
+D:\DXSDK\Include\xnamath.h(360,67): error C2065: 'm': undeclared identifier
+D:\DXSDK\Include\xnamath.h(386,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(386,16): error C2146: syntax error: missing ';' before identifier 'HALF'
+D:\DXSDK\Include\xnamath.h(391,11): error C3646: 'x': unknown override specifier
+D:\DXSDK\Include\xnamath.h(391,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(392,11): error C3646: 'y': unknown override specifier
+D:\DXSDK\Include\xnamath.h(392,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(397,15): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(397,14): error C2535: '_XMFLOAT2::_XMFLOAT2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(396): message : see declaration of '_XMFLOAT2::_XMFLOAT2'
+D:\DXSDK\Include\xnamath.h(398,15): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(398,14): error C2535: '_XMFLOAT2::_XMFLOAT2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(396): message : see declaration of '_XMFLOAT2::_XMFLOAT2'
+D:\DXSDK\Include\xnamath.h(400,27): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(400,51): error C2805: binary 'operator =' has too few parameters
+D:\DXSDK\Include\xnamath.h(397,39): error C2065: '_x': undeclared identifier
+D:\DXSDK\Include\xnamath.h(397,46): error C2065: '_y': undeclared identifier
+D:\DXSDK\Include\xnamath.h(397,37): error C2614: '_XMFLOAT2': illegal member initialization: 'x' is not a base or member
+D:\DXSDK\Include\xnamath.h(397,44): error C2614: '_XMFLOAT2': illegal member initialization: 'y' is not a base or member
+D:\DXSDK\Include\xnamath.h(411,15): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(411,14): error C2535: 'XMFLOAT2A::XMFLOAT2A(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(410): message : see declaration of 'XMFLOAT2A::XMFLOAT2A'
+D:\DXSDK\Include\xnamath.h(412,15): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(412,14): error C2535: 'XMFLOAT2A::XMFLOAT2A(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(410): message : see declaration of 'XMFLOAT2A::XMFLOAT2A'
+D:\DXSDK\Include\xnamath.h(414,27): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(414,51): error C2805: binary 'operator =' has too few parameters
+D:\DXSDK\Include\xnamath.h(411,46): error C2065: '_x': undeclared identifier
+D:\DXSDK\Include\xnamath.h(411,50): error C2065: '_y': undeclared identifier
+D:\DXSDK\Include\xnamath.h(412,47): error C2065: 'pArray': undeclared identifier
+D:\DXSDK\Include\xnamath.h(423,10): error C3646: 'x': unknown override specifier
+D:\DXSDK\Include\xnamath.h(423,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(424,10): error C3646: 'y': unknown override specifier
+D:\DXSDK\Include\xnamath.h(424,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(429,14): error C2061: syntax error: identifier 'HALF'
+D:\DXSDK\Include\xnamath.h(429,13): error C2535: '_XMHALF2::_XMHALF2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(428): message : see declaration of '_XMHALF2::_XMHALF2'
+D:\DXSDK\Include\xnamath.h(430,14): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(430,13): error C2535: '_XMHALF2::_XMHALF2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(428): message : see declaration of '_XMHALF2::_XMHALF2'
+D:\DXSDK\Include\xnamath.h(431,14): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(431,13): error C2535: '_XMHALF2::_XMHALF2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(428): message : see declaration of '_XMHALF2::_XMHALF2'
+D:\DXSDK\Include\xnamath.h(432,14): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(432,13): error C2535: '_XMHALF2::_XMHALF2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(428): message : see declaration of '_XMHALF2::_XMHALF2'
+D:\DXSDK\Include\xnamath.h(434,26): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(434,48): error C2805: binary 'operator =' has too few parameters
+D:\DXSDK\Include\xnamath.h(429,36): error C2065: '_x': undeclared identifier
+D:\DXSDK\Include\xnamath.h(429,43): error C2065: '_y': undeclared identifier
+D:\DXSDK\Include\xnamath.h(429,34): error C2614: '_XMHALF2': illegal member initialization: 'x' is not a base or member
+D:\DXSDK\Include\xnamath.h(429,41): error C2614: '_XMHALF2': illegal member initialization: 'y' is not a base or member
+D:\DXSDK\Include\xnamath.h(443,11): error C3646: 'x': unknown override specifier
+D:\DXSDK\Include\xnamath.h(443,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(444,11): error C3646: 'y': unknown override specifier
+D:\DXSDK\Include\xnamath.h(444,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\DXSDK\Include\xnamath.h(449,16): error C2061: syntax error: identifier 'SHORT'
+D:\DXSDK\Include\xnamath.h(449,15): error C2535: '_XMSHORTN2::_XMSHORTN2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(448): message : see declaration of '_XMSHORTN2::_XMSHORTN2'
+D:\DXSDK\Include\xnamath.h(450,16): error C2061: syntax error: identifier 'CONST'
+D:\DXSDK\Include\xnamath.h(450,15): error C2535: '_XMSHORTN2::_XMSHORTN2(void)': member function already defined or declared
+D:\DXSDK\Include\xnamath.h(448): message : see declaration of '_XMSHORTN2::_XMSHORTN2'
+D:\DXSDK\Include\xnamath.h(451,16): error C2061: syntax error: identifier 'FLOAT'
+D:\DXSDK\Include\xnamath.h(451,15): fatal error C1003: error count exceeds 100; stopping compilation
+  Tutorial07.cpp
 D:\DXSDK\Include\dxgitype.h(12,1): warning C4005: 'DXGI_STATUS_OCCLUDED': macro redefinition
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winerror.h(56388): message : see previous definition of 'DXGI_STATUS_OCCLUDED'
 D:\DXSDK\Include\dxgitype.h(13,1): warning C4005: 'DXGI_STATUS_CLIPPED': macro redefinition
@@ -117,13 +248,7 @@ D:\DXSDK\Include\xnamathvector.inl(1269,78): warning C4838: conversion from 'uns
 D:\DXSDK\Include\xnamathmisc.inl(518,43): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 D:\DXSDK\Include\xnamathmisc.inl(519,40): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 D:\DXSDK\Include\xnamathmisc.inl(519,51): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(586,42): warning C4456: declaration of 'cbNeverChanges' hides previous local declaration
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(547,20): message : see declaration of 'cbNeverChanges'
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(589,47): warning C4456: declaration of 'cbChangesOnResize' hides previous local declaration
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(544,22): message : see declaration of 'cbChangesOnResize'
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(602,42): warning C4456: declaration of 'cbNeverChanges' hides previous local declaration
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(547,20): message : see declaration of 'cbNeverChanges'
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(605,47): warning C4456: declaration of 'cbChangesOnResize' hides previous local declaration
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(544,22): message : see declaration of 'cbChangesOnResize'
-C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(546,17): warning C4189: 'moveOffset': local variable is initialized but not referenced
-  Tutorial07_2010.vcxproj -> C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\bin\Debug\x64\Tutorial07.exe
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(619,42): warning C4456: declaration of 'cbNeverChanges' hides previous local declaration
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(550,20): message : see declaration of 'cbNeverChanges'
+C:\Users\theun\Documents\GitHub\graficas\PiGraphicModule\editor\Tutorial07.cpp(549,17): warning C4189: 'moveOffset': local variable is initialized but not referenced
+  Generating Code...

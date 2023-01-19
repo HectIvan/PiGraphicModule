@@ -384,6 +384,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="editor\Tutorial07.cpp" />
   </ItemGroup>
   <ItemGroup>

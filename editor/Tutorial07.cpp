@@ -67,6 +67,12 @@ XMMATRIX                            g_World;
 XMMATRIX                            g_View;
 XMMATRIX                            g_Projection;
 XMFLOAT4                            g_vMeshColor( 0.7f, 0.7f, 0.7f, 1.0f );
+// Initialize the view matrix
+XMVECTOR Eye = XMVectorSet(0.0f, 3.0f, -6.0f, 0.0f);
+XMVECTOR At = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+XMVECTOR Up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+float                               g_pitch = 0;
+float                               g_yaw = 0;
 
 
 //--------------------------------------------------------------------------------------
@@ -481,9 +487,7 @@ HRESULT InitDevice()
     g_World = XMMatrixIdentity();
 
     // Initialize the view matrix
-    XMVECTOR Eye = XMVectorSet( 0.0f, 3.0f, -6.0f, 0.0f );
-    XMVECTOR At = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
-    XMVECTOR Up = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
+    
     g_View = XMMatrixLookAtLH( Eye, At, Up );
 
     CBNeverChanges cbNeverChanges;
@@ -492,10 +496,10 @@ HRESULT InitDevice()
     CBChangeOnResize cbChangesOnResize;
 
     // perspective
-    //g_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
+    g_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
 
     // ortographic
-    g_Projection = XMMatrixOrthographicLH(10, 10, 0.01f, 50.0f);
+    //g_Projection = XMMatrixOrthographicLH(10, 10, 0.01f, 50.0f);
 
     cbChangesOnResize.mProjection = XMMatrixTranspose(g_Projection);
     g_pImmediateContext->UpdateSubresource(g_pCBChangeOnResize, 0, NULL, &cbChangesOnResize, 0, 0);
@@ -550,20 +554,23 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
     static XMVECTOR eye = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
     static XMVECTOR at = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
     static XMVECTOR up = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+    bool clicked = false;
 
     switch( message )
     {
         case WM_PAINT:
-            hdc = BeginPaint( hWnd, &ps );
-            EndPaint( hWnd, &ps );
+        {
+            hdc = BeginPaint(hWnd, &ps);
+            EndPaint(hWnd, &ps);
             break;
-
+        }
         case WM_DESTROY:
-            PostQuitMessage( 0 );
+        {
+            PostQuitMessage(0);
             break;
-
+        }
         case WM_SIZE:
-
+        {
             // Initialize the projection matrix
             g_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
 
@@ -574,43 +581,58 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 
             }
             break;
+        }
         case WM_KEYDOWN:
         {
-            g_World = XMMatrixIdentity();
-            // Initialize the view matrix
-            eye += XMVectorSet(0.0f, -1.0f, 0.0f, 0.0f);
-            at += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-            up += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-            g_View = XMMatrixLookAtLH(eye, at, up);
+            XMVECTOR offSet = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+            switch (wParam)
+            {
+                case VK_UP:
+                {
+                    offSet += XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+                    break;
+                }
+                case VK_DOWN:
+                {
+                    offSet += XMVectorSet(0.0f, -1.0f, 0.0f, 0.0f);
+                    break;
+                }
+                case VK_RIGHT:
+                {
+                    offSet += XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
+                    break;
+                }
+                case VK_LEFT:
+                {
+                    offSet += XMVectorSet(-1.0f, 0.0f, 0.0f, 0.0f);
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+            Eye += offSet;
+            At += offSet;
+
+            g_View = XMMatrixLookAtLH(Eye, At, Up);
 
             CBNeverChanges cbNeverChanges;
             cbNeverChanges.mView = XMMatrixTranspose(g_View);
             g_pImmediateContext->UpdateSubresource(g_pCBNeverChanges, 0, NULL, &cbNeverChanges, 0, 0);
-            CBChangeOnResize cbChangesOnResize;
             break;
         }
-            
-        case WM_KEYUP:
+        case WM_LBUTTONDBLCLK:
         {
-            g_World = XMMatrixIdentity();
-            // Initialize the view matrix
-            eye += XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
-            at += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-            up += XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-            g_View = XMMatrixLookAtLH(eye, at, up);
-
-            CBNeverChanges cbNeverChanges;
-            cbNeverChanges.mView = XMMatrixTranspose(g_View);
-            g_pImmediateContext->UpdateSubresource(g_pCBNeverChanges, 0, NULL, &cbNeverChanges, 0, 0);
-            CBChangeOnResize cbChangesOnResize;
+            clicked = true;
             break;
         }
-
         default:
-            return DefWindowProc( hWnd, message, wParam, lParam );
-        
+        {
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
     }
-
+    // XMVECTOR rotation = XMVECTOR();
     return 0;
 }
 
