@@ -13,6 +13,10 @@
 #include "camera.h"
 #include "resource.h"
 
+// math libraries
+//--------------------------------------------------------------------------------------
+// #include <gml/glm.hpp>
+
 float value = 0.1f;
 //--------------------------------------------------------------------------------------
 // Structures
@@ -548,6 +552,7 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
     CBChangeOnResize cbChangesOnResize;
 
     const float moveOffset = 0.5f;
+    float t_value = 0.5f;
     CBNeverChanges cbNeverChanges;
 
     // following camera
@@ -585,26 +590,27 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
         case WM_KEYDOWN:
         {
             XMVECTOR offSet = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+            XMVECTOR rotationSet = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
             switch (wParam)
             {
                 case VK_UP:
                 {
-                    offSet += XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+                    offSet += XMVectorSet(0.0f, t_value, 0.0f, t_value);
                     break;
                 }
                 case VK_DOWN:
                 {
-                    offSet += XMVectorSet(0.0f, -1.0f, 0.0f, 0.0f);
+                    offSet += XMVectorSet(0.0f, -t_value, 0.0f, 0.0f);
                     break;
                 }
                 case VK_RIGHT:
                 {
-                    offSet += XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
+                    offSet += XMVectorSet(t_value, 0.0f, 0.0f, 0.0f);
                     break;
                 }
                 case VK_LEFT:
                 {
-                    offSet += XMVectorSet(-1.0f, 0.0f, 0.0f, 0.0f);
+                    offSet += XMVectorSet(-t_value, 0.0f, 0.0f, 0.0f);
                     break;
                 }
                 default:
