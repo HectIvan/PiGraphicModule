@@ -359,6 +359,21 @@ HRESULT InitDevice()
     if( FAILED( hr ) )
         return hr;
 
+#define MESH
+#if defined MESH
+
+    // creation---------------------------------------------------
+    // Set primitive topology
+    *g_pd3dDevice;
+    *g_pImmediateContext;
+
+    struct vertex
+    {
+        XMFLOAT3 m_position;
+        XMFLOAT2 textCoort;
+        // define what is a vertex index
+    };
+
     // Create vertex buffer
     SimpleVertex vertices[] =
     {
@@ -393,26 +408,8 @@ HRESULT InitDevice()
         { XMFLOAT3( -1.0f, 1.0f, 1.0f ), XMFLOAT2( 0.0f, 1.0f ) },
     };
 
-    D3D11_BUFFER_DESC bd;
-    ZeroMemory( &bd, sizeof(bd) );
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof( SimpleVertex ) * 24;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    D3D11_SUBRESOURCE_DATA InitData;
-    ZeroMemory( &InitData, sizeof(InitData) );
-    InitData.pSysMem = vertices;
-    hr = g_pd3dDevice->CreateBuffer( &bd, &InitData, &g_pVertexBuffer );
-    if( FAILED( hr ) )
-        return hr;
-
-    // Set vertex buffer
-    UINT stride = sizeof( SimpleVertex );
-    UINT offset = 0;
-    g_pImmediateContext->IASetVertexBuffers( 0, 1, &g_pVertexBuffer, &stride, &offset );
-
     // Create index buffer
-    // Create vertex buffer
+   // Create vertex buffer
     WORD indices[] =
     {
         3,1,0,
@@ -434,21 +431,56 @@ HRESULT InitDevice()
         23,20,22
     };
 
+    // Vertex Buffer
+    if (g_pVertexBuffer != nullptr)
+    {
+        g_pVertexBuffer->Release();
+        g_pVertexBuffer = nullptr;
+    }
+
+    D3D11_BUFFER_DESC bd;
+    ZeroMemory( &bd, sizeof(bd) );
     bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof( WORD ) * 36;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+    bd.ByteWidth = sizeof( SimpleVertex ) * 24;
+    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
     bd.CPUAccessFlags = 0;
-    InitData.pSysMem = indices;
-    hr = g_pd3dDevice->CreateBuffer( &bd, &InitData, &g_pIndexBuffer );
+    D3D11_SUBRESOURCE_DATA InitData;
+    ZeroMemory( &InitData, sizeof(InitData) );
+    InitData.pSysMem = vertices;
+    hr = g_pd3dDevice->CreateBuffer( &bd, &InitData, &g_pVertexBuffer );
     if( FAILED( hr ) )
         return hr;
 
+    // create vertex index
+    bd.Usage = D3D11_USAGE_DEFAULT;
+    bd.ByteWidth = sizeof(WORD) * 36;
+    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+    bd.CPUAccessFlags = 0;
+    InitData.pSysMem = indices;
+    hr = g_pd3dDevice->CreateBuffer(&bd, &InitData, &g_pIndexBuffer);
+    if (FAILED(hr))
+        return hr;
+
+    // render
+    // Set vertex buffer
+    UINT stride = sizeof(SimpleVertex);
+    UINT offset = 0;
+    g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer, &stride, &offset);
+
     // Set index buffer
-    g_pImmediateContext->IASetIndexBuffer( g_pIndexBuffer, DXGI_FORMAT_R16_UINT, 0 );
-
+    g_pImmediateContext->IASetIndexBuffer(g_pIndexBuffer, DXGI_FORMAT_R16_UINT, 0);
+    
     // Set primitive topology
-    g_pImmediateContext->IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
+    g_pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+#endif
 
+#if defined MATERIAL
+    br = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, "waterbase.dds", NULL, NULL, &g_pTextureRV, NULL);
+    if (FAILED)
+        return br
+
+#endif 
+    // use the base code with cmake and compile it like with the plgraphicmodule
     // Create the constant buffers
     bd.Usage = D3D11_USAGE_DEFAULT;
     bd.ByteWidth = sizeof(CBNeverChanges);
